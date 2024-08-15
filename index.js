@@ -1,0 +1,13 @@
+const express = require('express')
+const app = express()
+const categoryRouter = require('./routes/category') 
+const subCategoryRouter = require('./routes/subcategory')
+const itemRouter = require('./routes/items')
+const searchItemRouter = require('./routes/searchitem')
+app.use(express.json())
+app.use('/api/category',categoryRouter)
+app.use('/api/subcategory',subCategoryRouter)
+app.use('/api/items',itemRouter)
+app.use('/api/searchitem',searchItemRouter)
+
+app.listen(3000)
