@@ -1,9 +1,10 @@
+require("dotenv").config()
 const mongoose = require("mongoose");
 const { number } = require("zod");
-
+const connectionString = process.env.connectionString
 mongoose
   .connect(
-    "mongodb+srv://agaurbe:7DLL4sQ5aadSNanj@cluster0.l4w4tje.mongodb.net/Menu"
+    connectionString
   )
   .then(console.log("DB connected"))
   .catch((err) => console.log("DB could not be connected!"));
